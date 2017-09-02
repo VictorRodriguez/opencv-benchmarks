@@ -11,16 +11,29 @@ static void help(char* progName)
 {
     cout << endl
         <<  "This program demonstrated the use of the discrete Fourier transform (DFT). " << endl
-        <<  "The dft of an image is taken and it's power spectrum is displayed."          << endl
-        <<  "Usage:"                                                                      << endl
-        << progName << " [image_name -- default lena.jpg] "                       << endl << endl;
+        <<  "The dft of an image is taken and it's power spectrum is displayed."        << endl
+        <<  "Usage:"                                                                    << endl
+        << progName << " [--filename image_name -- default lena.jpg] "<< endl 
+        << progName << " [--filename image_name -- default lena.jpg] --display " << endl 
+        << endl;
 }
 
 int main(int argc, char ** argv)
 {
     help(argv[0]);
 
-    const char* filename = argc >=2 ? argv[1] : "lena.jpg";
+    const char* filename = "lena.jpg";
+    bool flag_display = false;
+
+    for (int i = 1; i < argc; ++i) {
+        if (std::string(argv[i]) == "--display") {
+            flag_display = true;
+        }
+
+        if (std::string(argv[i]) == "--filename") {
+            filename = argv[i + 1 ];
+        }
+    }
 
     Mat I = imread(filename, CV_LOAD_IMAGE_GRAYSCALE);
     if( I.empty())
@@ -70,9 +83,12 @@ int main(int argc, char ** argv)
     normalize(magI, magI, 0, 1, CV_MINMAX); // Transform the matrix with float values into a
                                             // viewable image form (float between values 0 and 1).
 
-    //imshow("Input Image"       , I   );    // Show the result
-    //imshow("spectrum magnitude", magI);
-    //waitKey();
+
+    if (flag_display) {
+            imshow("Input Image"       , I   );    // Show the result
+            imshow("spectrum magnitude", magI);
+            waitKey();
+    }
 
     cout<< "Done" << endl;
     return 0;
