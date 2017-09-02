@@ -5,12 +5,14 @@ consumed by the opencv libraries installed
 
 
 ## Build
-'''
+
+```
 make
-'''
+```
 
 ## Run 
-'''
+
+```
 ./main.py
-'''
+```
 
