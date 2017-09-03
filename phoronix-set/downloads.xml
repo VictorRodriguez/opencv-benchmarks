@@ -4,8 +4,8 @@
   <Downloads>
     <Package>
       <URL>https://github.com/VictorRodriguez/opencv-benchmarks/archive/1.0.tar.gz</URL>
-      <MD5>d38e39b31db6ef3700cbf5b597e4957f</MD5>
-      <FileSize>57129</FileSize>
+      <MD5>1b70b705865e9556928bc0c3e2047636</MD5>
+      <FileSize>339</FileSize>
     </Package>
   </Downloads>
 </PhoronixTestSuite>
