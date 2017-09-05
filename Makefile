@@ -13,5 +13,5 @@ clean:
 	rm -rf morphology_2
 
 distclean: clean
-	rm -rf image.jpg
+	rm -rf *image.jpg
 

@@ -90,10 +90,11 @@ void Morphology_Operations( int, void* )
   int operation = morph_operator + 2;
   //![operation]
 
-  printf("\nTest with : \n");
-  printf("morph_elem = %d \n",morph_elem);
-  printf("morph_size = %d \n",morph_size);
-  printf("morph_operator = %d \n",morph_operator);
+  // uncoment for debug
+  //printf("\nTest with : \n");
+  //printf("morph_elem = %d \n",morph_elem);
+  //printf("morph_size = %d \n",morph_size);
+  //printf("morph_operator = %d \n",morph_operator);
 
   Mat element = getStructuringElement( morph_elem, Size( 2*morph_size + 1, 2*morph_size+1 ), Point( morph_size, morph_size ) );
 

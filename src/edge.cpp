@@ -5,6 +5,8 @@
 
 #include <stdio.h>
 
+#define MAX_TRESH 50
+#define MAX_THRESHSCHARR 200
 using namespace cv;
 using namespace std;
 
@@ -13,12 +15,14 @@ int edgeThreshScharr=1;
 
 Mat image, gray, blurImage, edge1, edge2, cedge;
 
-const char* window_name1 = "Edge map : Canny default (Sobel gradient)";
-const char* window_name2 = "Edge map : Canny with custom gradient (Scharr)";
-
 // define a trackbar callback
 static void onTrackbar(int, void*)
 {
+    // uncoment for debug
+    //printf("\n Testing with: \n");
+    //printf("edgeThresh = %d\n",edgeThresh);
+    //printf("edgeThreshScharr = %d\n",edgeThreshScharr);
+
     blur(gray, blurImage, Size(3,3));
 
     // Run the edge detector on grayscale
@@ -26,8 +30,7 @@ static void onTrackbar(int, void*)
     cedge = Scalar::all(0);
 
     image.copyTo(cedge, edge1);
-    imwrite( "image.jpg", cedge);
-    //imshow(window_name1, cedge);
+    imwrite( "edge_1_image.jpg", cedge);
 
     /// Canny detector with scharr
     Mat dx,dy;
@@ -37,15 +40,15 @@ static void onTrackbar(int, void*)
     /// Using Canny's output as a mask, we display our result
     cedge = Scalar::all(0);
     image.copyTo(cedge, edge2);
-    imwrite( "image.jpg", cedge);
-    //imshow(window_name2, cedge);
+    imwrite( "edge_2_image.jpg", cedge);
 }
 
 static void help()
-{   printf("\n ==== OPENCV BENCHMARK ==== \n");
-    printf("This sample demonstrates Canny edge detection\n"
+{
+   printf("\n ==== OPENCV BENCHMARK ==== \n");
+   printf("\nThis sample demonstrates Canny edge detection\n"
            "Call:\n"
-           "    /.edge [image_name -- Default is lena.jpg]\n");
+           "    /.edge [image_name -- Default is ../data/fruits.jpg]\n\n");
 }
 
 const char* keys =
@@ -69,19 +72,14 @@ int main( int argc, const char** argv )
     cedge.create(image.size(), image.type());
     cvtColor(image, gray, COLOR_BGR2GRAY);
 
-    // Create a window
-    //namedWindow(window_name1, 1);
-    //namedWindow(window_name2, 1);
 
     // create a toolbar
-    //createTrackbar("Canny threshold default", window_name1, &edgeThresh, 100, onTrackbar);
-    //createTrackbar("Canny threshold Scharr", window_name2, &edgeThreshScharr, 400, onTrackbar);
-
-    // Show the image
-    onTrackbar(0, 0);
-
-    // Wait for a key stroke; the same function arranges events processing
-    //waitKey(0);
-
+    for (int value_Thresh=1; value_Thresh < MAX_TRESH; value_Thresh++){
+        for(int value_ThreshScharr=1 ; value_ThreshScharr < MAX_THRESHSCHARR; value_ThreshScharr++){
+            edgeThresh = value_Thresh;
+            edgeThreshScharr = value_ThreshScharr;
+            onTrackbar(0, 0);
+        }
+    }
     return 0;
 }
