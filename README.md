@@ -18,5 +18,8 @@ make
 
 ## Install OpenCV in Linux 
 
-[Fedora] (http://docs.opencv.org/3.2.0/dd/dd5/tutorial_py_setup_in_fedora.html)
-[Ubuntu] (http://docs.opencv.org/3.0-beta/doc/tutorials/introduction/linux_install/linux_install.html)
+
+[Fedora](http://docs.opencv.org/3.2.0/dd/dd5/tutorial_py_setup_in_fedora.html)
+
+
+[Ubuntu](http://docs.opencv.org/3.0-beta/doc/tutorials/introduction/linux_install/linux_install.html)
