@@ -7,7 +7,7 @@
     <Description>Stress benchmark tests to measure  time consumed by the opencv libraries installed</Description>
     <ResultScale>Seconds</ResultScale>
     <Proportion>LIB</Proportion>
-    <TimesToRun>5</TimesToRun>
+    <TimesToRun>3</TimesToRun>
   </TestInformation>
   <TestProfile>
     <Version>2.0</Version>

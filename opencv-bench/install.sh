@@ -7,7 +7,7 @@ echo $? > ~/install-exit-status
 cd ~
 
 echo "#!/bin/sh
-cd opencv-benchmarks-1.0/
+cd opencv-benchmarks-2.0/
 ./main.py > \$LOG_FILE
 echo \$? > ~/test-exit-status" > opencv-bench 
 chmod +x opencv-bench
