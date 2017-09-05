@@ -24,4 +24,16 @@ include_directories( ${OpenCV_INCLUDE_DIRS} )
 add_executable(contours2 src/contours2.cpp)
 target_link_libraries(contours2 ${DEPENDENCIES} ${OpenCV_LIBS})
 
+add_executable(discrete_fourier_transform src/discrete_fourier_transform.cpp)
+target_link_libraries(discrete_fourier_transform ${DEPENDENCIES} ${OpenCV_LIBS})
+
+add_executable(edge src/edge.cpp)
+target_link_libraries(edge ${DEPENDENCIES} ${OpenCV_LIBS})
+
+add_executable(morphology_2 src/morphology_2.cpp)
+target_link_libraries(morphology_2 ${DEPENDENCIES} ${OpenCV_LIBS})
+
+add_executable(smoothing src/smoothing.cpp)
+target_link_libraries(smoothing ${DEPENDENCIES} ${OpenCV_LIBS})
+
 set(EXECUTABLE_OUTPUT_PATH "bin/")
