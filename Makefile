@@ -1,4 +1,4 @@
-G++ = cd src/ && g++ `pkg-config --cflags --libs opencv`
+G++ = cd src/ && g++ -I/usr/local/include/ -lstdc++ -lopencv_imgcodecs -lopencv_highgui -lopencv_core -lopencv_imgproc -lopencv_videoio -lopencv_video -lopencv_videostab
 all:
 	$(G++) discrete_fourier_transform.cpp -o ../discrete_fourier_transform
 	$(G++) contours2.cpp -o ../contours2
