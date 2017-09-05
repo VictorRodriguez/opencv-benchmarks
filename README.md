@@ -7,6 +7,7 @@ consumed by the opencv V 3.3 libraries installed
 ## Build
 
 ```
+cmake .
 make
 ```
 
