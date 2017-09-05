@@ -1,7 +1,7 @@
 #!/bin/sh
 
-tar -xvf 1.0.tar.gz
-cd opencv-benchmarks-1.0/
+tar -xvf 2.0.tar.gz
+cd opencv-benchmarks-2.0/
 make -j $NUM_CPU_JOBS
 echo $? > ~/install-exit-status
 cd ~
