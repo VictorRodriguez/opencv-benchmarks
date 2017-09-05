@@ -8,7 +8,7 @@ using namespace std;
 
 static void help()
 {
-    cout
+    cout <<"\n ==== OPENCV BENCHMARK ==== \n"
     << "\nThis program illustrates the use of findContours and drawContours\n"
     << "The original image is put up along with the image of drawn contours\n"
     << "Usage:\n"
@@ -36,12 +36,8 @@ static void on_trackbar(int, void*)
 
 int main( int argc, char** argv)
 {
-    cv::CommandLineParser parser(argc, argv, "{help h||}");
-    if (parser.has("help"))
-    {
-        help();
-        return 0;
-    }
+
+    help();
     Mat img = Mat::zeros(w, w, CV_8UC1);
     //Draw 6 faces
     for( int i = 0; i < 6; i++ )

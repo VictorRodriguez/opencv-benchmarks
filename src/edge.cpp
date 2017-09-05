@@ -42,15 +42,15 @@ static void onTrackbar(int, void*)
 }
 
 static void help()
-{
-    printf("\nThis sample demonstrates Canny edge detection\n"
+{   printf("\n ==== OPENCV BENCHMARK ==== \n");
+    printf("This sample demonstrates Canny edge detection\n"
            "Call:\n"
-           "    /.edge [image_name -- Default is ../data/fruits.jpg]\n\n");
+           "    /.edge [image_name -- Default is lena.jpg]\n");
 }
 
 const char* keys =
 {
-    "{help h||}{@image |../data/fruits.jpg|input image name}"
+    "{help h||}{@image |lena.jpg|input image name}"
 };
 
 int main( int argc, const char** argv )

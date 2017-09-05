@@ -10,6 +10,7 @@ using namespace std;
 static void help(char* progName)
 {
     cout << endl
+        <<" ==== OPENCV BENCHMARK ==== " << endl
         <<  "This program demonstrated the use of the discrete Fourier transform (DFT). " << endl
         <<  "The dft of an image is taken and it's power spectrum is displayed."        << endl
         <<  "Usage:"                                                                    << endl
